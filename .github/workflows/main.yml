@@ -1,0 +1,11 @@
+name: APK Yapici
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Buildozer ile APK Yap
+        uses: ArtemSerebrennkov/buildozer-action@v1
+        with:
+          repository_read_token: ${{ secrets.GITHUB_TOKEN }}
